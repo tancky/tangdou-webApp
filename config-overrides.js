@@ -46,7 +46,7 @@ module.exports = function override(config, env) {
             loader: require.resolve('less-loader'),
             options: {
               // theme vars, also can use theme.js instead of this.
-              modifyVars: {"@brand-primary": "#1DA57A"},
+              modifyVars: require('./src/theme.js'),
             },
           },
         ]
