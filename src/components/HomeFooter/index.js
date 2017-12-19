@@ -3,13 +3,14 @@
  */
 import React from 'react'
 import { TabBar } from 'antd-mobile'
-import { Link } from 'react-router-dom'
 import './index.less'
 
-export default class HomeSpecial extends React.Component {
+export default class HomeFooter extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+        selectedTab: 'tangdouTab'
+    }
   }
   render() {
     return (
@@ -22,37 +23,66 @@ export default class HomeSpecial extends React.Component {
             <TabBar.Item
                 title='糖豆'
                 key='tangdou'
-                selected={true}
+                selected={this.state.selectedTab === 'tangdouTab'}
                 icon={<div className='tangdou-icon'/>}
                 selectedIcon={<div className='tangdou-slt-icon'/>}
+                onPress={() => {
+                  this.setState({
+                    selectedTab: 'tangdouTab',
+                  });
+                }}
             >
             </TabBar.Item>
             <TabBar.Item
                 title='课堂'
                 key='ketang'
+                selected={this.state.selectedTab === 'classTab'}
                 icon={<div className='ketang-icon'/>}
                 selectedIcon={<div className='ketang-slt-icon'/>}
+                onPress={() => {
+                  this.setState({
+                    selectedTab: 'classTab',
+                  });
+                }}
             >
             </TabBar.Item>
             <TabBar.Item
                 title='侃侃'
                 key='kankan'
+                selected={this.state.selectedTab === 'kankanTab'}
                 icon={<div className='kankan-icon'/>}
                 selectedIcon={<div className='kankan-slt-icon'/>}
+                onPress={() => {
+                  this.setState({
+                    selectedTab: 'kankanTab',
+                  });
+                }}
             >
             </TabBar.Item>
             <TabBar.Item
                 title='商城'
                 key='shopping'
+                selected={this.state.selectedTab === 'mallTab'}
                 icon={<div className='shopping-icon'/>}
                 selectedIcon={<div className='shopping-slt-icon'/>}
+                onPress={() => {
+                  this.setState({
+                    selectedTab: 'mallTab',
+                  });
+                }}
             >
             </TabBar.Item>
             <TabBar.Item
                 title='我的'
                 key='mine'
+                selected={this.state.selectedTab === 'mineTab'}
                 icon={<div className='mine-icon'/>}
                 selectedIcon={<div className='mine-slt-icon'/>}
+                onPress={() => {
+                  this.setState({
+                    selectedTab: 'mineTab',
+                  });
+                }}
             >
             </TabBar.Item>
           </TabBar>

@@ -8,7 +8,9 @@ import './index.less'
 export default class HomeHeader extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      imgHeight: 184
+    }
   }
   render() {
     return (
@@ -20,9 +22,49 @@ export default class HomeHeader extends React.Component {
                 infinite
                 selectedIndex={1}
             >
-              <img src={require('../../assets/img/banner.jpg')} alt=""/>
-              <img src={require('../../assets/img/banner.jpg')} alt=""/>
-              <img src={require('../../assets/img/banner.jpg')} alt=""/>
+              <a
+                  href="http://www.baidu.com"
+                  style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
+              >
+                <img
+                    src={require('../../assets/img/banner.jpg')}
+                    alt=""
+                    // bug！解决刷新页面时轮播图片无高度的问题
+                    onLoad={() => {
+                      // fire window resize event to change height
+                      window.dispatchEvent(new Event('resize'));
+                      this.setState({ imgHeight: 'auto' });
+                    }}
+                />
+              </a>
+              <a
+                  href="http://www.baidu.com"
+                  style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
+              >
+                <img
+                    src={require('../../assets/img/banner.jpg')}
+                    alt=""
+                    onLoad={() => {
+                      // fire window resize event to change height
+                      window.dispatchEvent(new Event('resize'));
+                      this.setState({ imgHeight: 'auto' });
+                    }}
+                />
+              </a>
+              <a
+                  href="http://www.baidu.com"
+                  style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
+              >
+                <img
+                    src={require('../../assets/img/banner.jpg')}
+                    alt=""
+                    onLoad={() => {
+                      // fire window resize event to change height
+                      window.dispatchEvent(new Event('resize'));
+                      this.setState({ imgHeight: 'auto' });
+                    }}
+                />
+              </a>
             </Carousel>
           </WingBlank>
         </div>
