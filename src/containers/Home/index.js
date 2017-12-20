@@ -9,13 +9,13 @@ import './index.less'
 class Home extends React.Component {
     render() {
       return (
-          <div className='home-wrap'>
-            <HomeTabList>
-              <HomeContentBox>
-                {this.props.children}
-              </HomeContentBox>
-            </HomeTabList>
-          </div>
+            <div className='home-wrap'>
+              <HomeTabList>
+                <HomeContentBox>
+                  {this.props.children}
+                </HomeContentBox>
+              </HomeTabList>
+            </div>
       )
     }
 
